@@ -1,6 +1,5 @@
 document.getElementById('date').innerHTML = new Date().toDateString();
 
-
 function embedDashboard() {
                 var containerDiv = document.getElementById("dashboardContainer");
                 var options = {
