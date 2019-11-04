@@ -1,4 +1,6 @@
 document.getElementById('date').innerHTML = new Date().toDateString();
+
+
 function embedDashboard() {
                 var containerDiv = document.getElementById("dashboardContainer");
                 var options = {
@@ -15,3 +17,4 @@ function embedDashboard() {
                 dashboard.on('error', onError);
                 dashboard.on('load', onDashboardLoad);
             }
+var dashboard = QuickSightEmbedding.embedDashboard(options);
