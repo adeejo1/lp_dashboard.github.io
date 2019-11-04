@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+ <head>
+  <title>My webpage!</title>
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.5/dist/quicksight-embedding-js-sdk.min.js"></script>
   <!--<script async src="index.js"></script> -->
-  <script> 
-             var dashboard
+  <script type = "text/javascript"> 
+            var dashboard
             function onDashboardLoad(payload) {
                 console.log("Do something when the dashboard is fully loaded.");
             }
@@ -28,17 +31,26 @@
                 dashboard.on('error', onError);
                 dashboard.on('load', onDashboardLoad);
             }
+            function onCountryChange(obj) {
+                dashboard.setParameters({country: obj.value});
+            }
       //dashboard = QuickSightEmbedding.embedDashboard(options);
       
             </script>
-  <head>
-    <title>My webpage!</title>
-    <link rel="stylesheet" href="styles.css" />
+
+
   </head>
     <body onload="embedDashboard()">
+      <span>
+            <label for="country">Country</label>
+            <select id="country" name="country" onchange="onCountryChange(this)">
+                <option value="United States">United States</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </span>
     <h1>Hello, World!</h1>
     <h4 id='date'></h4>
-    
    <div id="dashboardContainer"></div> 
   </body>
    
