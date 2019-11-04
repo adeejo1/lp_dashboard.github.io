@@ -3,6 +3,14 @@
   <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.5/dist/quicksight-embedding-js-sdk.min.js"></script>
   <script async src="index.js"></script>
   <script> 
+             var dashboard
+            function onDashboardLoad(payload) {
+                console.log("Do something when the dashboard is fully loaded.");
+            }
+ 
+            function onError(payload) {
+                console.log("Do something when the dashboard fails loading");
+            }
             function embedDashboard() {
                 var containerDiv = document.getElementById("dashboardContainer");
                 var options = {
