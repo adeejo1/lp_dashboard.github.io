@@ -20,9 +20,7 @@
                     url : "youtube.com",
                     
                     container: containerDiv,
-                    parameters: {
-                        country: 'United States'
-                    },
+                    
                     scrolling: "no",
                     height: "700px",
                     width: "1000px"
@@ -31,9 +29,7 @@
                 dashboard.on('error', onError);
                 dashboard.on('load', onDashboardLoad);
             }
-            function onCountryChange(obj) {
-                dashboard.setParameters({country: obj.value});
-            }
+            
       //dashboard = QuickSightEmbedding.embedDashboard(options);
       
             </script>
@@ -41,14 +37,7 @@
 
   </head>
     <body onload="embedDashboard()">
-      <span>
-            <label for="country">Country</label>
-            <select id="country" name="country" onchange="onCountryChange(this)">
-                <option value="United States">United States</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Canada">Canada</option>
-            </select>
-        </span>
+     
     <h1>Hello, World!</h1>
     <h4 id='date'></h4>
    <div id="dashboardContainer"></div> 
